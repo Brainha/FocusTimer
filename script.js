@@ -11,13 +11,27 @@ const secondDisplay = document.querySelector('.seconds')
 function countdown() {
   setTimeout(function () {
     let seconds = Number(secondDisplay.textContent)
+    let minutes = Number(minutesDisplay.textContent)
+
+    secondDisplay.textContent = String(seconds - 1).padStart(2, "0")
+
+    if (minutes <= 0) {
+
+      buttonPlay.classList.remove('hide')
+      buttonPause.classList.add('hide')
+      buttonSet.classList.remove('hide')
+      buttonStop.classList.add('hide')
+
+      return
+    }
 
     if (seconds <= 0) {
-      seconds = 60
+      seconds = 2
+
+      minutesDisplay.textContent = String(minutes - 1).padStart(2, "0")
     }
 
 
-    secondDisplay.textContent = seconds - 1
 
     countdown()
   }, 1000)
@@ -59,5 +73,5 @@ buttonSoundON.addEventListener('click', function () {
 
 buttonSet.addEventListener('click', function () {
   minutes = prompt('Quantos minutos?')
-  minutesDisplay.textContent = minutes
+  minutesDisplay.textContent = String(minutes).padStart(2, "0")
 })
