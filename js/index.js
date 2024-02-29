@@ -1,5 +1,7 @@
+// default import
 import resetControls from "./controls.js"
-import "./timer.js"
+// named import
+import { countdown, resetTimer } from "./timer.js"
 
 
 const buttonPlay = document.querySelector('.play')
