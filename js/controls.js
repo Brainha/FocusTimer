@@ -13,8 +13,8 @@ export default function Controls({
   }
 
   function pause() {
-    buttonPause.classList.add('hide')
     buttonPlay.classList.remove('hide')
+    buttonPause.classList.add('hide')
   }
 
   function reset() {
