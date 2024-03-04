@@ -6,8 +6,8 @@ export default function Timer({
 
 }) {
 
-  let timerTimeOut
   let minutes = Number(minutesDisplay.textContent)
+  let timerTimeOut
 
 
   function updateDisplay(minutes, seconds) {
@@ -46,7 +46,7 @@ export default function Timer({
   }
 
   function updateMinutes(newMinutes) {
-    minutes = newMinutes
+    minutes = newMinutes;
   }
 
   function hold() {
